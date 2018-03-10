@@ -14,7 +14,7 @@ class QuestionsAndAnswers extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:3004/q-and-a/${this.props.id || 0}`)
+    fetch(`http://localhost:3004/q-and-a/${this.props.id}`)
       .then(res => res.json())
       .then((result) => {
         this.setState({ 
