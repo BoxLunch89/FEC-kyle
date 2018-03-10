@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://database/27017');
+mongoose.connect('mongodb://database/q-and-a'); 
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
