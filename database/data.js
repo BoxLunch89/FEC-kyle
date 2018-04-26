@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://database/27017');
+mongoose.connect('mongodb://localhost/q-and-a');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -35,9 +35,9 @@ function addToDb(questions, callback) {
       console.log(err);
     }
     console.log('dropped database');
-  })
-  const promise = QuestionModel.create(questions, callback);
-  promise.then(() => {
+  });
+  const populateDb = QuestionModel.create(questions, callback);
+  populateDb.then(() => {
     console.log('added to database');
     process.exit();
   });
